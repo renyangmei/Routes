@@ -13,18 +13,26 @@
     </ul>
 
 <script>
-//    angular.module('DemoApp',[])
-//        .controller("main",["$scope","$http",function($scope,$http){
-//            $http({
-//                url:'data.php',
-//                method:"get"
-//            }).then(function (res) {
-//                $scope.names = res.data;
-//                console.log(res);
-//                console.log($scope.names);
-//                console.log(res.data)
-//            })
-//        }])
+    var app=angular.module('DemoApp',[])
+    app.component("pageHeader",{
+        // template:"<h2>我是标题，尊敬的{{username}}用户，欢迎访问本系统</h2>",
+        templateUrl:"component/pageheader.html",
+        controller:function ($scope) {
+            $scope.username="小安";
+        }
+    });
+
+    app.component("pageSlide",{
+        templateUrl:"component/pageslide.html"
+    });
+
+    app.component("pageContent",{
+        templateUrl:"component/pagecontent.html"
+    });
+
+    app.component("pageFooter",{
+        templateUrl:"component/pfooter.html"
+    });
 
 
 </script>
