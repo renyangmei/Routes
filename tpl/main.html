@@ -1,38 +1,43 @@
+<header class="mui-bar mui-bar-nav">
+    <h1 class="mui-title">{{title}}</h1>
+</header>
 
-    <div>
-        首页
-        <page-header></page-header>
-        <page-slide></page-slide>
-        <page-content></page-content>
-        <page-footer></page-footer>
+    <div class="mui-content">
+        <div>
+
+        </div>
+
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell" ng-repeat="x in names">
+                {{ x.name + ', ' + x.age }}
+            </li>
+        </ul>
+
     </div>
-    <ul>
-        <li ng-repeat="x in names">
-            {{ x.name + ', ' + x.age }}
-        </li>
-    </ul>
+
 
 <script>
-    var app=angular.module('DemoApp',[])
-    app.component("pageHeader",{
-        // template:"<h2>我是标题，尊敬的{{username}}用户，欢迎访问本系统</h2>",
-        templateUrl:"component/pageheader.html",
-        controller:function ($scope) {
-            $scope.username="小安";
-        }
-    });
+//    var app=angular.module('DemoApp',[])
+//    app.component("pageHeader",{
+//        // template:"<h2>我是标题，尊敬的{{username}}用户，欢迎访问本系统</h2>",
+//        templateUrl:"component/pageheader.html",
+//        controller:function ($scope) {
+//            $scope.username="小安";
+//        }
+//
+//    });
 
-    app.component("pageSlide",{
-        templateUrl:"component/pageslide.html"
-    });
-
-    app.component("pageContent",{
-        templateUrl:"component/pagecontent.html"
-    });
-
-    app.component("pageFooter",{
-        templateUrl:"component/pfooter.html"
-    });
+//    app.component("pageSlide",{
+//        templateUrl:"component/pageslide.html"
+//    });
+//
+//    app.component("pageContent",{
+//        templateUrl:"component/pagecontent.html"
+//    });
+//
+//    app.component("pageFooter",{
+//        templateUrl:"component/pfooter.html"
+//    });
 
 
 </script>
