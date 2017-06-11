@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body ng-app='DemoApp'>
+
+<!--<h2>AngularJS 路由应用</h2>-->
+<ul>
+    <li><a href="#/">首页</a></li>
+    <li><a href="#/first">第一页</a></li>
+    <li><a href="#/two">第二页</a></li>
+    <li><a href="#/three">其他</a></li>
+</ul>
+
+<div ng-view></div>
+<script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+<script src="http://apps.bdimg.com/libs/angular-route/1.3.13/angular-route.js"></script>
+<script>
+    var app=angular.module('DemoApp',['ngRoute']);
+        app.config(['$routeProvider', function($routeProvider){
+            $routeProvider
+                .when('/',{
+                    templateUrl:'tpl/main.html',
+                    controller:"main"
+                }).when('/first',{
+                    templateUrl:'tpl/first.html',
+                    controller:"first"
+                }).when('/two',{
+                    templateUrl:'tpl/two.html',
+                    controller:"two"
+                }).otherwise({redirectTo:'/'});
+            }]);
+        app.controller("main",["$scope","$http",function($scope,$http){
+            $http({
+                url:'data/data.php',
+                method:"get"
+            }).then(function (res) {
+                $scope.names = res.data;
+                console.log(res);
+                console.log($scope.names);
+                console.log(res.data)
+            })
+        }])
+
+</script>
+
+
+</body>
+</html>
