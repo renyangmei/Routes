@@ -44,6 +44,26 @@
             })
         }])
 
+        app.component("pageHeader",{
+            // template:"<h2>我是标题，尊敬的{{username}}用户，欢迎访问本系统</h2>",
+            templateUrl:"tpl/component/pageheader.html",
+            controller:function ($scope) {
+                $scope.username="小安";
+            }
+        });
+
+        app.component("pageSlide",{
+            templateUrl:"tpl/component/pageslide.html"
+        });
+
+        app.component("pageContent",{
+            templateUrl:"tpl/component/pagecontent.html"
+        });
+
+        app.component("pageFooter",{
+            templateUrl:"tpl/component/pfooter.html"
+        });
+
 </script>
 
 
