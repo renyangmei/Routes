@@ -6,45 +6,49 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Demo</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/mui.min.css">
+    <link rel="stylesheet" href="css/common/style.css">
+    <link rel="stylesheet" href="css/common/mui.min.css">
+    <link rel="stylesheet" href="css/common/animations.css">
+    <script src="js/common/mui.min.js"></script>
+    <script src="js/common/angular.min.js"></script>
+    <script src="js/common/angular-route.min.js"></script>
+    <script src="js/common/angular-animate.min.js"></script>
 
-    <script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
-    <script src="http://apps.bdimg.com/libs/angular-route/1.3.13/angular-route.js"></script>
-
-    <script src="js/index.js"></script>
 </head>
 <body ng-app='DemoApp'>
 
+    <div ng-view class="view-animate" >
+
+    </div>
+
+    <page-header></page-header>
 
     <nav class="mui-bar mui-bar-tab">
-        <a class="mui-tab-item mui-active" href="#/">
+        <a class="mui-tab-item mui-active" href="#!/">
             <span class="mui-icon mui-icon-home"></span>
             <span class="mui-tab-label">首页</span>
         </a>
-
-        <a class="mui-tab-item" href="#/two">
+        <a class="mui-tab-item" href="#!/mail">
             <span class="mui-icon mui-icon-email"></span>
             <span class="mui-tab-label">邮件</span>
         </a>
-        <a class="mui-tab-item" href="#/first">
+        <a class="mui-tab-item" href="#!/phone">
             <span class="mui-icon mui-icon-phone"></span>
             <span class="mui-tab-label">电话</span>
         </a>
-        <a class="mui-tab-item" href="#/three">
+        <a class="mui-tab-item" href="#!/setting">
             <span class="mui-icon mui-icon-gear"></span>
             <span class="mui-tab-label">设置</span>
         </a>
     </nav>
 
-    <div ng-view>
-
-    </div>
+    <script src="js/index.js"></script>
+</body>
 
 <script>
-
+    mui('body').on('tap','a',function(){
+        window.top.location.href=this.href;
+    });
 </script>
 
-
-</body>
 </html>

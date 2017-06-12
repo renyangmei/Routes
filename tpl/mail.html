@@ -1,6 +1,3 @@
-<header class="mui-bar mui-bar-nav">
-    <h1 class="mui-title">{{title}}</h1>
-</header>
 <div class="mui-content">
     <div class="con" style="padding:5px">
         <form class="mui-input-group">
@@ -16,18 +13,17 @@
 
             <div class="mui-input-row">
                 <label>标题</label>
-                <input type="text" class="mui-input-clear" placeholder="输入标题" name="title" ng-model="titles">
+                <input type="text" class="mui-input-clear" placeholder="输入标题" name="title">
             </div>
             <div class="mui-input-row">
                 <label>内容</label>
             </div>
             <div style="padding-left:15px">
-                <textarea name="con" cols="30" rows="10" style="border:1px solid #ccc;border-top:none" ng-model="con"></textarea>
+                <textarea name="con" cols="30" rows="10" style="border:1px solid #ccc;border-top:none"></textarea>
             </div>
             <div class="mui-button-row">
-                <button type="button" class="mui-btn mui-btn-primary" ng-click="send()">发送</button>
+                <button type="button" class="mui-btn mui-btn-primary">发送</button>
             </div>
         </form>
     </div>
 </div>
-<!--<script src="mui.min.js"></script>-->

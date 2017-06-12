@@ -1,0 +1,22 @@
+<div class="mui-content">
+    <form class="mui-input-group phoneForm">
+        <div class="mui-input-row phoneRow">
+            <label>
+                <span class="mui-icon mui-icon-search"></span>
+            </label>
+            <input type="text" class="mui-input-clear" placeholder="请输入内容">
+        </div>
+    </form>
+    <ul class="mui-table-view">
+        <li class="mui-table-view-cell" ng-repeat="y in phone">
+            <a class="mui-navigate-right">
+                {{ y.name + '  ' + y.tel }}
+            </a>
+        </li>
+    </ul>
+</div>
+<style>
+
+
+</style>
+
