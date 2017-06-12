@@ -25,3 +25,16 @@ body,html,h1,h2,h3,h4,h5,h6,span,div,p,b{
 .phoneRow label{
     padding: 7px 15px !important;
 }
+.phoneRight{
+    position: relative;
+    z-index: 1;
+    background: #fff;
+    border-bottom: 1px solid #ccc;
+}
+.iconDel{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    bottom: 3px;
+    margin: auto;
+}

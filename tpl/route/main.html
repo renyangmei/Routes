@@ -1,0 +1,13 @@
+<div class="mui-content">
+    <ul class="mui-table-view">
+        <li class="mui-table-view-cell mui-media" ng-repeat="x in names">
+            <a href="#!/mainInfo/{{$index}}">
+                <img class="mui-media-object mui-pull-right" src="http://img.cdn.qiniu.dcloud.net.cn/muwu.jpg">
+                <div class="mui-media-body">
+                    {{x.tlt}}
+                    <p class='mui-ellipsis'>{{x.desc}}</p>
+                </div>
+            </a>
+        </li>
+    </ul>
+</div>

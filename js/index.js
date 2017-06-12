@@ -2,16 +2,19 @@ var app=angular.module('DemoApp',['ngRoute']);
 /*路由*/
 app.config(['$routeProvider', function($routeProvider){
     $routeProvider.when('/',{
-        templateUrl:'tpl/main.html',
+        templateUrl:'tpl/route/main.html',
         controller:"main"
+    }).when('/mainInfo/:id',{
+        templateUrl:'tpl/route/mainInfo.html',
+        controller:"mainInfo"
     }).when('/mail',{
-        templateUrl:'tpl/mail.html',
+        templateUrl:'tpl/route/mail.html',
         controller:"mail"
     }).when('/phone',{
-        templateUrl:'tpl/phone.html',
+        templateUrl:'tpl/route/phone.html',
         controller:"phone"
     }).when('/setting',{
-        templateUrl:'tpl/setting.html',
+        templateUrl:'tpl/route/setting.html',
         controller:"setting"
     })
 }]);
@@ -32,7 +35,7 @@ app.controller("main",["$scope","$http",function($scope,$http){
 app.controller("mail",["$scope","$http",function($scope,$http){
     $scope.title="邮件";
     $http({
-        url:'data/data.json',
+        url:'data/person.json',
         method:"get"
     }).then(function (res) {
         // alert(2);
@@ -50,6 +53,18 @@ app.controller("phone",["$scope","$http",function($scope,$http){
 }]);
 app.controller("setting",["$scope","$http",function($scope,$http){
     $scope.title="设置";
+}]);
+app.controller("mainInfo",["$scope","$http",function($scope,$http){
+    console.log($scope.data);
+
+    $http({
+        url:'data/Info.json',
+        method:"get",
+        // params:{id:id}
+    }).then(function (res) {
+        $scope.info = res.data;
+        console.log($scope.info)
+    })
 }]);
 /*组件*/
 app.component("pageHeader",{

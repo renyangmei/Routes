@@ -4,19 +4,17 @@
             <label>
                 <span class="mui-icon mui-icon-search"></span>
             </label>
-            <input type="text" class="mui-input-clear" placeholder="请输入内容">
+            <input type="text" class="mui-input-clear" placeholder="请输入内容" ng-model="search">
         </div>
     </form>
     <ul class="mui-table-view">
-        <li class="mui-table-view-cell" ng-repeat="y in phone">
-            <a class="mui-navigate-right">
+        <li class="mui-table-view-cell" ng-repeat="y in phone | filter:{tel:search}">
+            <a class="mui-navigate-right phoneRight" href="javascript:;">
                 {{ y.name + '  ' + y.tel }}
             </a>
+            <span class="mui-icon mui-icon-trash iconDel" ng-click="del($index)"></span>
         </li>
     </ul>
 </div>
-<style>
 
-
-</style>
 
