@@ -60,7 +60,7 @@ app.controller("mainInfo",["$scope","$http",function($scope,$http){
     $http({
         url:'data/Info.json',
         method:"get",
-        // params:{id:id}
+
     }).then(function (res) {
         $scope.info = res.data;
         console.log($scope.info)
